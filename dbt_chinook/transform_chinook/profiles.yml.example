@@ -1,0 +1,15 @@
+# Replace 'my_snowflake_profile' with the name specified in your dbt_project.yml
+my_snowflake_profile:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "Account identifier" 
+      user: "my_username"
+      password: "my_password"
+      role: "transformer_role"       
+      database: "analytics_db"      # The database dbt will create objects in
+      warehouse: "compute_wh"       # The virtual warehouse for compute
+      schema: "dbt_dev"             # The default schema for models
+      threads: 4                  # Number of parallel threads
+      client_session_keep_alive: False

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+dnf install -y mariadb105 aws-cli
+
+
+aws s3 cp s3://${bucket_name}/scripts/Chinook_MySql.sql /tmp/load.sql
+
+
+sed -i '/CREATE DATABASE/d' /tmp/load.sql
+sed -i '/DROP DATABASE/d' /tmp/load.sql
+sed -i '/USE/d' /tmp/load.sql
+
+
+mysql -h ${db_endpoint} -u ${db_user} -p'${db_password}' chinook < /tmp/load.sql
+
+
+sudo shutdown -h now
