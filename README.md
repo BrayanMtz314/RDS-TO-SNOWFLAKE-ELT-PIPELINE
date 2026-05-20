@@ -13,3 +13,10 @@
 1. clonar repo
 2. uv sync
 3. llenar profile.yml 
+
+
+### RUN DBT MODELS 
+
+```bash
+uv run dbt run 
+```

@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: chinook_raw  # Este es el alias corto que usaremos en dbt
+    database: RDS_TO_SNOWFLAKE_PIPELINE_DB
+    schema: RDS_TO_SNOWFLAKE_PIPELINE_SCHEMA
+    
+    # Aquí enlistamos las tablas que dbt va a leer de Snowflake
+    tables:
+      - name: ALBUM
+      - name: ARTIST
+      - name: CUSTOMER
+      - name: EMPLOYEE
+      - name: GENRE
+      - name: INVOICE
+      - name: INVOICE_LINE
+      - name: MEDIA_TYPE
+      - name: PLAYLIST
+      - name: PLAYLIST_TRACK
+      - name: TRACK
