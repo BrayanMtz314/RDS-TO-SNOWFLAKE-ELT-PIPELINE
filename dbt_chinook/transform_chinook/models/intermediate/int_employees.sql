@@ -1,4 +1,3 @@
--- models/intermediate/int_employees.sql
 
 WITH employees_raw AS (
     SELECT * FROM {{ source('chinook_raw', 'EMPLOYEE') }}

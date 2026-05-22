@@ -45,12 +45,11 @@ resource "aws_iam_policy" "s3_snowflake_policy" {
 }
 
 
-# 2. Tu rol de IAM modificado
+
 resource "aws_iam_role" "s3_snowflake_role" {
   name = "${var.project_name}-s3-snowflake-role"
 
-  # Si las variables tienen datos, aplicamos la política de Snowflake. 
-  # Si están vacías (primera ejecución), aplicamos una política temporal.
+
   assume_role_policy = var.snowflake_iam_user_arn != "" ? jsonencode({
     Version = "2012-10-17"
     Statement = [

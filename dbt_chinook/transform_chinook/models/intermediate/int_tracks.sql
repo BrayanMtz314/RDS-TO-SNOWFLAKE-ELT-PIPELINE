@@ -1,4 +1,4 @@
--- models/intermediate/int_tracks.sql
+
 
 WITH tracks AS (
     SELECT * FROM {{ source('chinook_raw', 'TRACK') }}
@@ -22,20 +22,16 @@ media_types AS (
 
 
 SELECT
-    -- 1. Claves / IDs
     t.TRACK_ID,
     t.ALBUM_ID,
     t.GENRE_ID,
     t.MEDIA_TYPE_ID,
-    -- 2. Atributos del Track
     t.NAME AS TRACK_NAME,
     t.COMPOSER,
     t.MILLISECONDS,
-    -- Agregamos un cálculo analítico directo: duración en segundos
     ROUND(t.MILLISECONDS / 1000, 2) AS SECONDS,
     t.BYTES,
     t.UNIT_PRICE,
-    -- 3. Información desnormalizada (Los Joins)
     al.TITLE AS ALBUM_TITLE,
     art.NAME AS ARTIST_NAME,
     g.NAME AS GENRE_NAME,

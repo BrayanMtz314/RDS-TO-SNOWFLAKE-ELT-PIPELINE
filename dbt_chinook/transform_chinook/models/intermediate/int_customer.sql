@@ -13,6 +13,7 @@ SELECT
     c.EMAIL,
     c.PHONE,
     c.ADDRESS,
+    c.COMPANY,
     c.CITY,
     c.STATE,
     c.POSTAL_CODE,

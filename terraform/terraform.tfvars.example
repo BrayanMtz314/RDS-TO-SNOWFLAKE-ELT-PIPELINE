@@ -1,0 +1,33 @@
+# main info
+region = "<aws-region>"
+project_name = "rds-to-snowflake-pipeline" #Do not change the project name. If you do change it, be sure to also modify the names in the populatedTables.sql file for the scripts to work. 
+# vpc info
+azs = ["<avairability-zone-1>","<avairability-zone-2>"]
+vpc_cidr = "10.0.0.0/16"
+public_subnets_cidr = ["10.0.1.0/24","10.0.2.0/24"]
+private_subnets_cidr = ["10.0.3.0/24","10.0.4.0/24"]
+
+# RDS
+instance_class = "<rds_type>"
+allocated_storage = <20 --- example>
+db_username = "<admin --- example>"
+db_password = "<password --- example>"
+
+# ec2
+instance_type = "t3.micro"
+ec2_ami = "<linux ami>" #choose a valid linux ami in your region
+
+# S3
+account_id = "<your account id is only used to create a unique S3 bucket>"
+
+# SNOWFLAKE you can find this data in your accounts details
+snowflake_organization = "<>"
+snowflake_account = "<>"
+snowflake_user = "<>"
+snowflake_password = "<>"
+snowflake_role = "<>"
+
+
+#leave in blank
+snowflake_external_id  = "" 
+snowflake_iam_user_arn = "" 
